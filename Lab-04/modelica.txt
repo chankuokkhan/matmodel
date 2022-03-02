@@ -1,0 +1,50 @@
+model Project
+  parameter  Real w=15;
+  Real x(start=0);
+  Real y(start=2);
+  
+  equation
+    der(x)= y;
+    der(y)= -w*x;
+
+  
+  annotation(experiment(StartTime=0, StopTime=55, Tplerance=1e-06,Interval=0.05));
+
+end Project;
+
+
+
+model Project
+  parameter  Real w=1;
+  parameter  Real g=10;
+  
+  Real x(start=0);
+  Real y(start=2);
+  
+  equation
+    der(x)= y;
+    der(y)= -g*y-w*x;
+
+  
+  annotation(experiment(StartTime=0, StopTime=55, Tplerance=1e-06,Interval=0.05));
+
+end Project;
+
+
+
+model Project
+  parameter  Real w=1;
+  parameter  Real g=3;
+  
+  Real x(start=0);
+  Real y(start=2);
+  
+  equation
+    der(x)= y;
+    der(y)= -g*y-w*x + 3*sin(2*time);
+
+  
+  annotation(experiment(StartTime=0, StopTime=55, Tplerance=1e-06,Interval=0.05));
+
+end Project;
+
